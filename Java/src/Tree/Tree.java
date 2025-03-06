@@ -1,6 +1,8 @@
 package Tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Tree{
@@ -33,7 +35,7 @@ public class Tree{
         return Math.max(height(Root.left),height(Root.right))+1;
     }
 
-    public boolean balanced(Node Root){
+    public boolean balancedRoot(Node Root){
         return (Math.abs(height(Root.left)-height(Root.right)) <= 1);
     }
 
@@ -51,8 +53,24 @@ public class Tree{
     public void displayInorder(Node root){
         if (root != null){
             displayInorder(root.left);
-            System.out.println(root.key);
+            System.out.print(root.key+" ");
             displayInorder(root.right);
+        }
+    }
+
+    public void displayLevelOrder(Node Root){
+        if (root == null) return;
+        Queue<Node> q = new LinkedList<>();
+        q.offer(root);
+        while(!q.isEmpty()) {
+            int size = q.size();
+            for(int i = 0; i < size; i++) {
+                Node cur = q.poll();
+                System.out.print(cur.key+" ");
+                if(cur.left != null) q.offer(cur.left);
+                if(cur.right != null) q.offer(cur.right);
+            }
+            System.out.println();
         }
     }
 
@@ -64,19 +82,6 @@ public class Tree{
         else {
             displayKth(Root.left, k-1);
             displayKth(Root.right, k-1);
-        }
-    }
-
-    public void levelOrder(Node Root){
-        Queue<Node> q = new LinkedList<>();
-        q.add(Root);
-        while (!q.isEmpty()){
-            Node curr=q.poll();
-            System.out.println(curr.key);
-            if (curr.left!=null)
-                q.add(curr.left);
-            if (curr.right!=null)
-                q.add(curr.right);
         }
     }
 
@@ -99,13 +104,13 @@ public class Tree{
         if (Root.key == num){
             return;
         }
-        if (Root.left == null && Root.key > num){
+        if (Root.left == null && Root.key < num){
             Root.left = new Node(num);
         }
-        if (Root.right == null && Root.key < num){
+        if (Root.right == null && Root.key > num){
             Root.right = new Node(num);
         }
-        if (Root.key < num)
+        if (Root.key > num)
             insertBST(Root.right, num);
         else
             insertBST(Root.left, num);
@@ -139,5 +144,16 @@ public class Tree{
             }
         }
         return n;
+    }
+
+    public void invertBST(Node Root) {
+        if (Root == null)
+            return;
+        Node temp;
+        temp = Root.right;
+        Root.right = Root.left;
+        Root.left = temp;
+        invertBST(Root.left);
+        invertBST(Root.right);
     }
 }

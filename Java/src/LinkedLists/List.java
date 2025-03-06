@@ -1,12 +1,17 @@
 package LinkedLists;
 
+import java.util.HashSet;
+
 public class List {
 
     Node head, tail;
     int size;
 
-    public List(){
-        size=0;
+    public List(int...args){
+        for (int dat: args) {
+            insertLast(dat);
+            size+=1;
+        }
     }
 
     public void deleteNode(int data){
@@ -79,10 +84,39 @@ public class List {
         size+=1;
     }
 
+    public void reverseList() {
+        Node current = head;
+        Node previous = null;
+        Node nextCurrent;
+        while (current != null) {
+            nextCurrent = current.next;
+            current.next = previous;
+            previous = current;
+            current = nextCurrent;
+        }
+        Node store=head;
+        head=tail;
+        tail=store;
+    }
+
+    public boolean detectCycle() {
+        HashSet<Node> set=new HashSet<>();
+        Node temp=head;
+        if (temp==null)
+            return false;
+        while (temp.next!=null) {
+            if (set.contains(temp.next))
+                return true;
+            set.add(temp);
+            temp=temp.next;
+        }
+        return false;
+    }
+
     public void displayList(){
         Node temp=head;
         while (temp!=null){
-            System.out.println(temp.data);
+            System.out.print(temp.data+" ");
             temp=temp.next;
         }
     }

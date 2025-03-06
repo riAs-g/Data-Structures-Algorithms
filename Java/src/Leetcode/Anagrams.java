@@ -19,44 +19,28 @@ class Anagrams
 
     public static List<List<String>> checkAnagram(List<String> strs)
     {
-        List<List<String>> ana = new ArrayList<>();
-        HashSet<String> grams = new HashSet<>(strs);
-        if (grams.size()==1){
-            ana.add(new ArrayList<>());
-            for (String s: strs) {
-                ana.get(0).add(s);
-            }
-            return ana;
-        }else {
-            Iterator<String> i=grams.iterator();
-            int k=0;
-                while (i.hasNext()) {
-                    ana.add(new ArrayList<>());
-                    String s1=i.next();
-                    for (String s : strs) {
-                        if (check(s1, s)) {
-                            ana.get(k).add(s);
-                        }
-                    }
-                    k++;
-                }
+        Map<String, List<String>> res = new HashMap<>();
 
-            List<List<String>> newList = new ArrayList<>();
-            for (List<String> element : ana) {
-                if (!newList.contains(element)) {
-                    newList.add(element);
-                }
+        for (String s : strs) {
+            int[] count = new int[26];
+
+            for (char c : s.toCharArray()) {
+                count[c - 'a']++;
             }
-            return newList;
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 26; i++) {
+                sb.append('#');
+                sb.append(count[i]);
+            }
+            String key = sb.toString();
+
+            if (!res.containsKey(key)) {
+                res.put(key, new ArrayList<>());
+            }
+            res.get(key).add(s);
         }
-    }
 
-    public static boolean check(String firstStr, String secondStr)
-    {
-        char[] first = firstStr.toCharArray();
-        char[] second = secondStr.toCharArray();
-        Arrays.sort(first);
-        Arrays.sort(second);
-        return Arrays.equals(first, second);
+        return new ArrayList<>(res.values());
     }
 }

@@ -40,7 +40,7 @@ public class Graph {
         }
     }
 
-    public void disBFS() {
+    public void disjointBFS() {
         boolean[] visited = new boolean[list.size() + 1];
         for (int i = 0; i < list.size(); i++) {
             if (!visited[i])
@@ -87,16 +87,16 @@ public class Graph {
         }
     }
 
-    public void shortestUG(int num){
+    public void shortestPathUG(int num){
         boolean[] visited = new boolean[list.size() + 1];
         for (int i = 0; i < list.size(); i++) {
             if (!visited[i]) {
-                helpShortestUG(i, visited);
+                helpShortestPathUG(i, visited);
             }
         }
     }
 
-    public void helpShortestUG(int num, boolean[] visit){
+    public void helpShortestPathUG(int num, boolean[] visit){
         int res=0;
         Queue<Integer> queue=new LinkedList<>();
         queue.add(num);
@@ -114,8 +114,8 @@ public class Graph {
         }
     }
 
-    public void detectCycles(){
-
+    public void detectCyclesUG(){
+        
     }
 
     public void displayGraph(){

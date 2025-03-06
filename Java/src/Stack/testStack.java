@@ -8,6 +8,5 @@ public class testStack {
         stack.push(3);
         stack.pop();
         stack.display();
-        System.out.println(stack.size());
     }
 }

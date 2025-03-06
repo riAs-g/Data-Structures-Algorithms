@@ -11,8 +11,7 @@ fun main(){
     val string2 = Scanner(System.`in`)
     val seq:String = string2.nextLine()
 
-    val ans: Boolean=isPresent(str,seq)
-    println(ans)
+    println(isPresent(str,seq))
 }
 
 fun isPresent(str: String, seq: String): Boolean {
@@ -22,7 +21,7 @@ fun isPresent(str: String, seq: String): Boolean {
         if (str[i] == seq[j]) {
             i++
             j++
-        }else {
+        } else {
             i++
         }
     }

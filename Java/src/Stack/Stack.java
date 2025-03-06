@@ -6,19 +6,17 @@ public class Stack {
 
     ArrayList<Integer> array=new ArrayList<>();
 
-    public void push(int num){
-        array.add(num);
-    }
+    public void push(int num){ array.add(num); }
 
     public int pop(){
-        int num=array.get(array.size()-1);
-        array.remove(array.size()-1);
+        int num=array.getLast();
+        array.removeLast();
         return num;
     }
 
-    public int size(){
-        return array.size();
-    }
+    public int top(){ return array.getLast(); }
+
+    public boolean isEmpty(){ return array.isEmpty(); }
 
     public void display(){
         int size=array.size();

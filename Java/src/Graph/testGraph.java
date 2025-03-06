@@ -7,6 +7,6 @@ public class testGraph {
         g.addEdge(1,2,3);
         g.addEdge(2,1,3);
         g.addEdge(3,1,2);
-        g.shortestUG(0);
+        g.shortestPathUG(0);
     }
 }
