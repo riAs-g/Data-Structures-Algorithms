@@ -1,5 +1,5 @@
 .vscode/
 .bin/
 .lib/
-.src/*/*.class
-.src/Kotlin/*/*.jar
+*.class
+*.jar
