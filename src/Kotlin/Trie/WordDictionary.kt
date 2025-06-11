@@ -19,8 +19,8 @@ class WordDictionary {
     }
 
     private fun dfs(word: String, index: Int, node: TrieNode): Boolean {
-        var cur = root
-        for (i in j until word.length) {
+        var cur = node
+        for (i in index until word.length) {
             val c = word[i]
             if (c == '.') {
                 for (child in cur.children) {
@@ -30,13 +30,13 @@ class WordDictionary {
                 }
                 return false
             } else {
-                val index = c - 'a'
-                if (cur.children[index] == null) {
+                val charIndex = c - 'a'
+                if (cur.children[charIndex] == null) {
                     return false
                 }
-                cur = cur.children[index]!!
+                cur = cur.children[charIndex]!!
             }
         }
-        return cur.word
+        return cur.endOfWord
     }
 }
