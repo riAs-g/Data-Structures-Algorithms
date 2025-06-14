@@ -7,7 +7,7 @@ import java.util.List;
 public class Permute {
 
     public static void main(String[] args) {
-        System.out.print(permute(new int[]{1,2,3}));
+        System.out.print(permute(new int[] { 1, 2, 3 }));
     }
 
     private static List<List<Integer>> permute(int[] nums) {

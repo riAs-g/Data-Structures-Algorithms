@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class GenerateParenthesis {
     public static void main(String[] args) {
-        GenerateParenthesis g=new GenerateParenthesis();
+        GenerateParenthesis g = new GenerateParenthesis();
         System.out.println(g.generateParenthesis(3));
     }
 

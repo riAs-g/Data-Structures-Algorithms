@@ -2,7 +2,7 @@ package LinkedLists;
 
 public class ReorderLL {
     public static void main(String[] args) {
-        List res=reorder(new List(1,2,3,4,5));
+        List res = reorder(new List(1, 2, 3, 4, 5));
         res.displayList();
     }
 
@@ -14,7 +14,7 @@ public class ReorderLL {
             fast = fast.next.next;
         }
 
-        //Reverse the second half of the list using a tmp variable
+        // Reverse the second half of the list using a tmp variable
         Node second = slow.next;
         Node prev = slow.next = null;
         while (second != null) {
@@ -24,7 +24,7 @@ public class ReorderLL {
             second = tmp;
         }
 
-        //Re-assign the pointers to match the pattern
+        // Re-assign the pointers to match the pattern
         Node first = list.head;
         second = prev;
         while (second != null) {

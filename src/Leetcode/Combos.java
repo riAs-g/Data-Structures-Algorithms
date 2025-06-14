@@ -5,9 +5,9 @@ class Combos {
         String[] arr;
         char[] letters;
         int[] score;
-        arr= new String[]{"Ankit", "Kumar", "Ravi"};
-        letters=new char[]{'a', 'k'};
-        score=new int[]{3};
+        arr = new String[] { "Ankit", "Kumar", "Ravi" };
+        letters = new char[] { 'a', 'k' };
+        score = new int[] { 3 };
         System.out.println(maxScoreWords(arr, letters, score));
     }
 

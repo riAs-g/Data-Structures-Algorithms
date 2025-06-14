@@ -5,14 +5,14 @@ import java.util.HashSet;
 public class ContainsDuplicatell {
 
     public static void main(String[] args) {
-        System.out.println(check(new int[]{1,2,3,1,2,3}, 2));
+        System.out.println(check(new int[] { 1, 2, 3, 1, 2, 3 }, 2));
     }
 
     private static boolean check(int[] nums, int k) {
-        int i=0;
-        HashSet<Integer> set=new HashSet<>();
+        int i = 0;
+        HashSet<Integer> set = new HashSet<>();
         for (int j = 0; j < nums.length; j++) {
-            if (j-i > k) {
+            if (j - i > k) {
                 set.remove(nums[i]);
                 i++;
             }

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class WindowMaximum {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(windowMax(new int[]{5,3,1,2,0,5}, 3)));
+        System.out.println(Arrays.toString(windowMax(new int[] { 5, 3, 1, 2, 0, 5 }, 3)));
     }
 
     private static int[] windowMax(int[] nums, int k) {

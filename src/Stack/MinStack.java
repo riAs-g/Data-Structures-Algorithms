@@ -8,15 +8,16 @@ public class MinStack {
     Stack<Integer> minstack;
 
     public MinStack() {
-        stack=new Stack<>();
-        minstack=new Stack<>();
+        stack = new Stack<>();
+        minstack = new Stack<>();
     }
 
     public void push(int val) {
         stack.push(val);
         if (minstack.isEmpty())
             minstack.push(val);
-        else minstack.push(Math.min(minstack.peek(), val));
+        else
+            minstack.push(Math.min(minstack.peek(), val));
     }
 
     public int pop() {
@@ -28,12 +29,12 @@ public class MinStack {
         return stack.peek();
     }
 
-    public int getMin(){
+    public int getMin() {
         return minstack.peek();
     }
 
-    public void display(){
-        while (!stack.isEmpty()){
+    public void display() {
+        while (!stack.isEmpty()) {
             System.out.println(stack.pop());
         }
     }

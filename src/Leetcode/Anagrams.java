@@ -5,23 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Anagrams
-{
-    public static void main(String[] args) 
-    {
-        List<String> str=new ArrayList<>();
+public class Anagrams {
+    public static void main(String[] args) {
+        List<String> str = new ArrayList<>();
         str.add("bat");
         str.add("tea");
         str.add("eat");
         str.add("tan");
         str.add("nat");
         List<List<String>> group;
-        group=checkAnagram(str);
+        group = checkAnagram(str);
         System.out.println(group);
     }
 
-    public static List<List<String>> checkAnagram(List<String> strs)
-    {
+    public static List<List<String>> checkAnagram(List<String> strs) {
         Map<String, List<String>> res = new HashMap<>();
 
         for (String s : strs) {

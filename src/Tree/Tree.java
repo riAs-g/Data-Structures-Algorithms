@@ -3,87 +3,90 @@ package Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Tree{
+public class Tree {
 
     TreeNode root;
 
-    public void newRoot(int key){
-         TreeNode node=new TreeNode(key);
-         root=node;
-         node.left=null;
-         node.right=null;
+    public void newRoot(int key) {
+        TreeNode node = new TreeNode(key);
+        root = node;
+        node.left = null;
+        node.right = null;
     }
 
-    public int maxValue(TreeNode Root){
+    public int maxValue(TreeNode Root) {
         if (Root == null)
             return Integer.MIN_VALUE;
         return Math.max(Root.key, Math.max(maxValue(Root.left), maxValue(Root.right)));
     }
 
-    public int size(TreeNode Root){
+    public int size(TreeNode Root) {
         if (Root == null)
             return 0;
-        return size(Root.left)+size(Root.right)+1;
+        return size(Root.left) + size(Root.right) + 1;
     }
 
-    public int height(TreeNode Root){
-        if (Root == null){
+    public int height(TreeNode Root) {
+        if (Root == null) {
             return 0;
         }
-        return Math.max(height(Root.left),height(Root.right))+1;
+        return Math.max(height(Root.left), height(Root.right)) + 1;
     }
 
-    public boolean balancedRoot(TreeNode Root){
-        return (Math.abs(height(Root.left)-height(Root.right)) <= 1);
+    public boolean balancedRoot(TreeNode Root) {
+        return (Math.abs(height(Root.left) - height(Root.right)) <= 1);
     }
 
-    public boolean childrenSum(TreeNode Root){
-        int sum=0;
+    public boolean childrenSum(TreeNode Root) {
+        int sum = 0;
         if (Root == null)
             return true;
         if (Root.left != null)
-            sum+= Root.left.key;
+            sum += Root.left.key;
         if (Root.right != null)
-            sum+= Root.right.key;
-        return  (Root.key == sum && childrenSum(Root.left) && childrenSum(Root.right));
+            sum += Root.right.key;
+        return (Root.key == sum && childrenSum(Root.left) && childrenSum(Root.right));
     }
 
-    public void displayInorder(TreeNode root){
-        if (root != null){
+    public void displayInorder(TreeNode root) {
+        if (root != null) {
             displayInorder(root.left);
-            System.out.print(root.key+" ");
+            System.out.print(root.key + " ");
             displayInorder(root.right);
         }
     }
 
-    public void displayLevelOrder(TreeNode Root){
-        if (root == null) return;
+    public void displayLevelOrder(TreeNode Root) {
+        if (root == null)
+            return;
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             int size = q.size();
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 TreeNode cur = q.poll();
-                System.out.print(cur.key+" ");
-                if(cur.left != null) q.offer(cur.left);
-                if(cur.right != null) q.offer(cur.right);
+                System.out.print(cur.key + " ");
+                if (cur.left != null)
+                    q.offer(cur.left);
+                if (cur.right != null)
+                    q.offer(cur.right);
             }
             System.out.println();
         }
     }
 
-    public void displayKth(TreeNode Root, int k){
+    public void displayKth(TreeNode Root, int k) {
         if (Root == null)
             return;
         if (k == 0)
-            System.out.println(Root.key+" ");
+            System.out.println(Root.key + " ");
         else {
-            displayKth(Root.left, k-1);
-            displayKth(Root.right, k-1);
+            displayKth(Root.left, k - 1);
+            displayKth(Root.right, k - 1);
         }
     }
 
-    public boolean searchBST(TreeNode Root, int num){
+    public boolean searchBST(TreeNode Root, int num) {
         if (Root == null)
             return false;
         if (Root.key == num)
@@ -94,18 +97,18 @@ public class Tree{
             return searchBST(Root.left, num);
     }
 
-    public void insertBST(TreeNode Root, int num){
-        if (Root == null){
+    public void insertBST(TreeNode Root, int num) {
+        if (Root == null) {
             newRoot(num);
             return;
         }
-        if (Root.key == num){
+        if (Root.key == num) {
             return;
         }
-        if (Root.left == null && Root.key < num){
+        if (Root.left == null && Root.key < num) {
             Root.left = new TreeNode(num);
         }
-        if (Root.right == null && Root.key > num){
+        if (Root.right == null && Root.key > num) {
             Root.right = new TreeNode(num);
         }
         if (Root.key > num)
@@ -114,13 +117,13 @@ public class Tree{
             insertBST(Root.left, num);
     }
 
-    public int floorBST(TreeNode Root, int num){
-        int n=0;
-        while (Root != null){
+    public int floorBST(TreeNode Root, int num) {
+        int n = 0;
+        while (Root != null) {
             if (Root.key == num)
                 return num;
             if (Root.key > num)
-                Root= Root.left;
+                Root = Root.left;
             else {
                 n = Root.key;
                 Root = Root.right;
@@ -129,13 +132,13 @@ public class Tree{
         return n;
     }
 
-    public int ceilBST(TreeNode Root, int num){
-        int n=-1;
-        while (Root != null){
+    public int ceilBST(TreeNode Root, int num) {
+        int n = -1;
+        while (Root != null) {
             if (Root.key == num)
                 return num;
             if (Root.key < num)
-                Root= Root.right;
+                Root = Root.right;
             else {
                 n = Root.key;
                 Root = Root.left;

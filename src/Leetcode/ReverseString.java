@@ -7,13 +7,13 @@ public class ReverseString {
     }
 
     private static char[] reverse(String str) {
-        int i=0,j=str.length()-1;
+        int i = 0, j = str.length() - 1;
         char temp;
-        char[] chars=str.toCharArray();
-        while (i<j) {
-            temp=chars[j];
-            chars[j]=chars[i];
-            chars[i]=temp;
+        char[] chars = str.toCharArray();
+        while (i < j) {
+            temp = chars[j];
+            chars[j] = chars[i];
+            chars[i] = temp;
             i++;
             j--;
         }

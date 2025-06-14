@@ -11,10 +11,9 @@ public class PhoneLetters {
         System.out.print(letterCombinations("23"));
     }
 
-
     public static List<String> letterCombinations(String digits) {
         List<String> res = new ArrayList<>();
-        if(digits.isEmpty()){
+        if (digits.isEmpty()) {
             return res;
         }
 
@@ -28,7 +27,6 @@ public class PhoneLetters {
         map.put('8', "tuv");
         map.put('9', "wxyz");
 
-
         StringBuilder sb = new StringBuilder();
         backtrack(digits, sb, res, map, 0);
         return res;
@@ -36,8 +34,8 @@ public class PhoneLetters {
     }
 
     public static void backtrack(String digits, StringBuilder sb, List<String> res,
-                                 Map<Character, String> map, int index) {
-        if(sb.length() == digits.length()){
+            Map<Character, String> map, int index) {
+        if (sb.length() == digits.length()) {
             res.add(sb.toString());
             return;
         }
@@ -45,10 +43,10 @@ public class PhoneLetters {
         char dig = digits.charAt(index);
         String letters = map.get(dig);
 
-        for(char c : letters.toCharArray()){
+        for (char c : letters.toCharArray()) {
             sb.append(c);
             backtrack(digits, sb, res, map, index + 1);
-            sb.deleteCharAt(sb.length()-1);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
 }

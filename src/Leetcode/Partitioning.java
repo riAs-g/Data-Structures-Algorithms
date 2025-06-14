@@ -11,6 +11,7 @@ public class Partitioning {
 
     private static final List<List<String>> res = new ArrayList<>();
     private static final List<String> part = new ArrayList<>();
+
     private static List<List<String>> partition(String s) {
         dfs(s, 0);
         return res;

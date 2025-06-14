@@ -24,7 +24,7 @@ public class Combinations {
         }
         for (int i = start; i <= n; i++) {
             comb.add(i);
-            backtrack(i+1, comb, n, k);
+            backtrack(i + 1, comb, n, k);
             comb.removeLast();
         }
     }

@@ -5,11 +5,11 @@ import java.util.*;
 public class TopKFrequency {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(topKFrequent(new int[]{5,3,-1,-1,-1,3,73,1}, 1)));
+        System.out.println(Arrays.toString(topKFrequent(new int[] { 5, 3, -1, -1, -1, 3, 73, 1 }, 1)));
     }
 
     public static int[] topKFrequent(int[] nums, int k) {
-        HashMap<Integer,Integer> s = frequency(nums);
+        HashMap<Integer, Integer> s = frequency(nums);
         System.out.println(s);
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         for (int i = 0; i <= nums.length; i++) {
@@ -22,11 +22,11 @@ public class TopKFrequency {
         System.out.println(list);
 
         int[] result = new int[k];
-        int j= 0;
+        int j = 0;
         for (int i = 0; i < k; i++) {
-            if (!list.get(list.size()-1-j).isEmpty()) {
-                result[i] = list.get(list.size()-1-j).getFirst();
-                list.get(list.size()-1-j).removeFirst();
+            if (!list.get(list.size() - 1 - j).isEmpty()) {
+                result[i] = list.get(list.size() - 1 - j).getFirst();
+                list.get(list.size() - 1 - j).removeFirst();
             } else {
                 j++;
                 i--;
@@ -35,8 +35,8 @@ public class TopKFrequency {
         return result;
     }
 
-    public static HashMap<Integer,Integer> frequency(int[] arr) {
-        HashMap<Integer,Integer> mp=new HashMap<>();
+    public static HashMap<Integer, Integer> frequency(int[] arr) {
+        HashMap<Integer, Integer> mp = new HashMap<>();
         for (int j : arr) {
             mp.put(j, mp.get(j) == null ? 1 : mp.get(j) + 1);
         }

@@ -2,7 +2,7 @@ package Leetcode;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        System.out.println(search(new int[]{-1,0,3,5,9,12},2));
+        System.out.println(search(new int[] { -1, 0, 3, 5, 9, 12 }, 2));
     }
 
     private static int search(int[] nums, int target) {

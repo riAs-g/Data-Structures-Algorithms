@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 public class MinIndex {
     public static void main(String[] args) {
-        List<String> str1=new ArrayList<>();
-        List<String> str2=new ArrayList<>();
+        List<String> str1 = new ArrayList<>();
+        List<String> str2 = new ArrayList<>();
         str1.add("Shogun");
         str1.add("Piatti");
         str1.add("Tropicana");
@@ -20,17 +20,17 @@ public class MinIndex {
     }
 
     private static String[] findRestaurant(List<String> list1, List<String> list2) {
-        int i=1, max=Integer.MAX_VALUE;
-        List<String> fin=new ArrayList<>();
+        int i = 1, max = Integer.MAX_VALUE;
+        List<String> fin = new ArrayList<>();
         fin.add(String.valueOf(new ArrayList<String>()));
-        for (String wrd1: list1){
-            for (String wrd2: list2){
-                if (wrd1.equals(wrd2) && list1.indexOf(wrd1)+ list2.indexOf(wrd2)<max){
-                    max=list1.indexOf(wrd1)+ list2.indexOf(wrd2);
-                    fin.set(0,wrd1);
-                } else if (wrd1.equals(wrd2) && list1.indexOf(wrd1)+ list2.indexOf(wrd2) == max) {
+        for (String wrd1 : list1) {
+            for (String wrd2 : list2) {
+                if (wrd1.equals(wrd2) && list1.indexOf(wrd1) + list2.indexOf(wrd2) < max) {
+                    max = list1.indexOf(wrd1) + list2.indexOf(wrd2);
+                    fin.set(0, wrd1);
+                } else if (wrd1.equals(wrd2) && list1.indexOf(wrd1) + list2.indexOf(wrd2) == max) {
                     fin.add(String.valueOf(new ArrayList<String>()));
-                    fin.set(i,wrd1);
+                    fin.set(i, wrd1);
                     i++;
                 }
             }

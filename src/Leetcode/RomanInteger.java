@@ -24,13 +24,13 @@ public class RomanInteger {
 
         int sum = 0;
         char[] rom = roman.toCharArray();
-        for (int i = 0; i < rom.length-1 ; i++) {
-            if (table.get(rom[i]) < table.get(rom[i+1]))
+        for (int i = 0; i < rom.length - 1; i++) {
+            if (table.get(rom[i]) < table.get(rom[i + 1]))
                 sum -= table.get(rom[i]);
             else
                 sum += table.get(rom[i]);
         }
-        sum=sum+table.get(rom[rom.length-1]);
+        sum = sum + table.get(rom[rom.length - 1]);
         return sum;
     }
 }

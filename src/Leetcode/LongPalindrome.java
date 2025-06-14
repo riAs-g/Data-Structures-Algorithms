@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class LongPalindrome {
     public static void main(String[] args) {
         System.out.println("Enter a String");
-        try (Scanner input = new Scanner(System.in))
-        {
-            String str=input.nextLine();
+        try (Scanner input = new Scanner(System.in)) {
+            String str = input.nextLine();
             System.out.println(longestPalindrome(str));
         }
     }
@@ -31,7 +30,7 @@ public class LongPalindrome {
     }
 
     public static boolean Palindrome(String str) {
-        StringBuilder rev=new StringBuilder(str);
+        StringBuilder rev = new StringBuilder(str);
         rev.reverse();
         return str.contentEquals(rev);
     }

@@ -8,7 +8,7 @@ import java.util.Map;
 public class CombinationSumll {
 
     public static void main(String[] args) {
-        System.out.println(combinationSum(new int[]{10,1,2,7,6,1,5}, 8));
+        System.out.println(combinationSum(new int[] { 10, 1, 2, 7, 6, 1, 5 }, 8));
     }
 
     static List<List<Integer>> res = new ArrayList<>();

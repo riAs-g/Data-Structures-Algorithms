@@ -5,11 +5,12 @@ import java.util.Map;
 
 public class MinimumWindow {
     public static void main(String[] args) {
-        System.out.println(minWindow("abcdef","dfa"));
+        System.out.println(minWindow("abcdef", "dfa"));
     }
 
     private static String minWindow(String s, String t) {
-        if (t.isEmpty()) return "";
+        if (t.isEmpty())
+            return "";
 
         Map<Character, Integer> countT = new HashMap<>();
         Map<Character, Integer> window = new HashMap<>();
@@ -18,7 +19,7 @@ public class MinimumWindow {
         }
 
         int have = 0, need = countT.size();
-        int[] res = {-1, -1};
+        int[] res = { -1, -1 };
         int resLen = Integer.MAX_VALUE;
         int l = 0;
 

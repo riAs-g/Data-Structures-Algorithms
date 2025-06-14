@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class SortArray {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sort(new int[]{9,8,7,6,5,4,3,2,1})));
+        System.out.println(Arrays.toString(sort(new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 })));
     }
 
     private static int[] sort(int[] nums) {
-//        Arrays.sort(nums);
+        // Arrays.sort(nums);
         heapSort(nums);
         return nums;
     }

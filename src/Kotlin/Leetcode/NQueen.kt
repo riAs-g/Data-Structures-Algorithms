@@ -44,8 +44,8 @@ fun main() {
     fun queens(n: Int): List<List<String>> {
         val res: MutableList<List<String>> = ArrayList()
         val board = Array(n) { CharArray(n) }
-        for (i in 0..<n) {
-            for (j in 0..<n) {
+        for (i in 0 ..< n) {
+            for (j in 0 ..< n) {
                 board[i][j] = '.'
             }
         }

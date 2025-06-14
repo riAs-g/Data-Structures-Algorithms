@@ -2,8 +2,8 @@ package Stack;
 
 public class testStack {
     public static void main(String[] args) {
-        Stack stack=new Stack();
-        MinStack minStack=new MinStack();
+        Stack stack = new Stack();
+        MinStack minStack = new MinStack();
         minStack.push(1);
         minStack.push(2);
         minStack.push(3);

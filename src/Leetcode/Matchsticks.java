@@ -5,12 +5,13 @@ import java.util.Arrays;
 public class Matchsticks {
 
     public static void main(String[] args) {
-        System.out.print(makesquare(new int[]{2,2,2,2}));
+        System.out.print(makesquare(new int[] { 2, 2, 2, 2 }));
     }
 
     public static boolean makesquare(int[] matchsticks) {
         int totalLength = Arrays.stream(matchsticks).sum();
-        if (totalLength % 4 != 0) return false;
+        if (totalLength % 4 != 0)
+            return false;
 
         int length = totalLength / 4;
         int[] sides = new int[4];
@@ -28,11 +29,13 @@ public class Matchsticks {
         for (int i = 0; i < 4; i++) {
             if (sides[i] + matchsticks[index] <= length) {
                 sides[i] += matchsticks[index];
-                if (dfs(matchsticks, sides, index + 1, length)) return true;
+                if (dfs(matchsticks, sides, index + 1, length))
+                    return true;
                 sides[i] -= matchsticks[index];
             }
 
-            if (sides[i] == 0) break;
+            if (sides[i] == 0)
+                break;
         }
 
         return false;

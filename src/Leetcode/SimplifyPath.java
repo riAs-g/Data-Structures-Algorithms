@@ -9,12 +9,13 @@ public class SimplifyPath {
     }
 
     private static String simplify(String str) {
-        Stack<String> stack=new Stack<>();
-        StringBuilder curr= new StringBuilder();
-        for (char ch: (str+"/").toCharArray()) {
+        Stack<String> stack = new Stack<>();
+        StringBuilder curr = new StringBuilder();
+        for (char ch : (str + "/").toCharArray()) {
             if (ch == '/') {
                 if (String.valueOf(curr).equals("..")) {
-                    if (!stack.isEmpty()) stack.pop();
+                    if (!stack.isEmpty())
+                        stack.pop();
                 } else if (!String.valueOf(curr).isEmpty() && !String.valueOf(curr).equals(".")) {
                     stack.push(String.valueOf(curr));
                 }
@@ -23,6 +24,6 @@ public class SimplifyPath {
                 curr.append(ch);
             }
         }
-        return "/"+String.join("/",stack);
+        return "/" + String.join("/", stack);
     }
 }

@@ -2,22 +2,22 @@ package Leetcode;
 
 public class CompleteWord {
     public static void main(String[] args) {
-        String plate="PA123";
-        String[] arr = new String[]{"participant","individual","start","exist","above",
-                                    "already", "easy","attack","player","planer"};
+        String plate = "PA123";
+        String[] arr = new String[] { "participant", "individual", "start", "exist", "above",
+                "already", "easy", "attack", "player", "planer" };
         System.out.println(shortestCompletingWord(plate, arr));
     }
 
     private static String shortestCompletingWord(String licensePlate, String[] words) {
-        StringBuilder st= new StringBuilder();
+        StringBuilder st = new StringBuilder();
         for (int i = 0; i < licensePlate.length(); i++) {
-            if (Character.isLetter(licensePlate.charAt(i))){
+            if (Character.isLetter(licensePlate.charAt(i))) {
                 st.append(licensePlate.charAt(i));
             }
         }
-        char[] arr= st.toString().toCharArray();
-        int count=0, len=Integer.MAX_VALUE;
-        String ret="";
+        char[] arr = st.toString().toCharArray();
+        int count = 0, len = Integer.MAX_VALUE;
+        String ret = "";
         for (String str : words) {
             StringBuilder nstr = new StringBuilder();
             nstr.append(str);

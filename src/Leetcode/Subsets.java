@@ -7,11 +7,11 @@ import java.util.List;
 public class Subsets {
 
     public static void main(String[] args) {
-        System.out.println(subsets(new int[]{1,2,2}));
+        System.out.println(subsets(new int[] { 1, 2, 2 }));
     }
 
     public static List<List<Integer>> subsets(int[] nums) {
-        HashSet<List<Integer>> map=new HashSet<>();
+        HashSet<List<Integer>> map = new HashSet<>();
         List<Integer> subset = new ArrayList<>();
         dfs(nums, 0, subset, map);
         return new ArrayList<>(map);

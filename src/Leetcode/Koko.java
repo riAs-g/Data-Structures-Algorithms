@@ -2,7 +2,7 @@ package Leetcode;
 
 public class Koko {
     public static void main(String[] args) {
-        System.out.println(speed(new int[]{3,6,7,11}, 8));
+        System.out.println(speed(new int[] { 3, 6, 7, 11 }, 8));
     }
 
     private static int speed(int[] piles, int target) {

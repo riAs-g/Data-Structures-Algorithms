@@ -8,10 +8,11 @@ import java.util.Set;
 public class Permutationsll {
 
     public static void main(String[] args) {
-        System.out.print(permuteUnique(new int[]{1,1,2}));
+        System.out.print(permuteUnique(new int[] { 1, 1, 2 }));
     }
 
     private static Set<List<Integer>> res;
+
     public static List<List<Integer>> permuteUnique(int[] nums) {
         res = new HashSet<>();
         List<Integer> perm = new ArrayList<>();

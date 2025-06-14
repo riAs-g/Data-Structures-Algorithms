@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Watermelon {
 
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter an integer value: ");
         boolean ans = even(scanner.nextInt());
         if (ans)

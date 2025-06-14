@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Temperature {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(getTemp(new int[]{55,38,53,81,61,93,97,32,43,78})));
+        System.out.println(Arrays.toString(getTemp(new int[] { 55, 38, 53, 81, 61, 93, 97, 32, 43, 78 })));
     }
 
     private static int[] getTemp(int[] temperatures) {

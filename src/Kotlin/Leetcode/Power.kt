@@ -1,21 +1,21 @@
 import java.util.*
 
-fun main(){
+fun main() {
     println("Enter a number")
     val number1 = Scanner(System.`in`)
-    val numNumber:Double = number1.nextDouble()
+    val numNumber: Double = number1.nextDouble()
 
     println("Enter a power")
     val number2 = Scanner(System.`in`)
-    val numPower:Int = number2.nextInt()
+    val numPower: Int = number2.nextInt()
 
-    val ans: Double = getPower(numNumber,numPower)
+    val ans: Double = getPower(numNumber, numPower)
     println(ans)
 }
 
 fun getPower(numNumber: Double, numPower: Int): Double {
-    var pow: Long= numPower.toLong()
-    var number: Double=numNumber
+    var pow: Long = numPower.toLong()
+    var number: Double = numNumber
 
     if (number < -10000 || number > 10000) {
         return 0.0
@@ -29,7 +29,7 @@ fun getPower(numNumber: Double, numPower: Int): Double {
     }
     return if (pow % 2 == 0L) {
         getPower(number * number, (pow / 2).toInt())
-    } else{
-        number * getPower(number, (pow-1).toInt())
+    } else {
+        number * getPower(number, (pow - 1).toInt())
     }
 }

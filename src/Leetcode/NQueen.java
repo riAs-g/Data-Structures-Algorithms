@@ -22,7 +22,7 @@ public class NQueen {
     }
 
     private static void dfs(int r, char[][] board,
-                            List<List<String>> res) {
+            List<List<String>> res) {
         if (r == board.length) {
             List<String> copy = new ArrayList<>();
             for (char[] row : board) {
@@ -42,13 +42,16 @@ public class NQueen {
 
     private static boolean isSafe(int r, int c, char[][] board) {
         for (int i = r - 1; i >= 0; i--) {
-            if (board[i][c] == 'Q') return false;
+            if (board[i][c] == 'Q')
+                return false;
         }
         for (int i = r - 1, j = c - 1; i >= 0 && j >= 0; i--, j--) {
-            if (board[i][j] == 'Q') return false;
+            if (board[i][j] == 'Q')
+                return false;
         }
         for (int i = r - 1, j = c + 1; i >= 0 && j < board.length; i--, j++) {
-            if (board[i][j] == 'Q') return false;
+            if (board[i][j] == 'Q')
+                return false;
         }
         return true;
     }

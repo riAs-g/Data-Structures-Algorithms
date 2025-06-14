@@ -1,9 +1,10 @@
 package Tree;
 
-class TreeNode{
+class TreeNode {
     int key;
     TreeNode left, right;
-    TreeNode(int k){
-        this.key=k;
+
+    TreeNode(int k) {
+        this.key = k;
     }
 }
